@@ -1,0 +1,148 @@
+﻿
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <title>toyota</title>
+     <link rel="stylesheet" href="toyota.css">
+     
+ </head>
+ <body>
+     <h3>A TOYOTA CUSTOMER MAIL ORDER</h3>
+     <!-- Assigning validatefunction to the html-form -->
+     <form onsubmit="validate();" action="userdetails" method="POST">
+
+        <!-- A section for the customers' details -->
+     <div class="container  containerone">
+        <div class="customer customcolor">
+        <fieldset class="fieldsetone">
+            <legend>Customer Information</legend>
+            <table cellpadding="4" >
+                <tr>
+                    <td style="width:30% ;">Customer ID:</td>
+                    <td><input autofocus type="text" id="custID"name="custID" style="width:40%;height:25px;border:1px;"><small class="small" id="smid"></small></td>
+                </tr> 
+                <tr>
+                  <td>Name:</td>   
+                  <td><input type="text" id="name" name="name" style="width:89%;height:25px;border:1px;"border:1px;><small class="small" id="smname"></small></td>
+                </tr>
+                <tr>
+                    <td>State:</td> 
+                    <td colspan="2"><input type="text" id="state" name="state"style="width:28%;height:25px;border:1px;"><small class="small" id="smstate" ></small>
+                        <input id="customerType" type="checkbox" checked>Retail Customer
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+        </div>
+
+        <!-- A section for the customers' shipping -->
+        <div class="shipping customcolor">
+            <fieldset class="fieldsetone">
+                <legend>Shipping</legend>
+                <table >
+                    <tr>
+                        <td style="width:50%;height:55px;"><input class = "shipping"type="radio" id="ups" name="shipping" checked>UPS</td>
+                        <td><input class = "shipping" id="fedexgr" type="radio"  name="shipping">Fed Ex Ground</td>
+                    </tr> 
+                    <tr>
+                        <td style="width:50%;height:55px;"> <input class = "shipping"type="radio" id="postalair" name="shipping">
+                            UPS Postal Air</td>
+                        <td>
+                            <input class = "shipping"type="radio" id="fedexair" name="shipping">Fed Ex Air
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><small class="small" id="smship"></small></td>
+                    </tr>
+
+                </table>
+            </fieldset>
+        </div>
+
+        <!-- A section for the partsand the numder of spares ordered by the customer -->
+        <div class="customcolor">
+            <fieldset class="fieldsettwo">
+                <legend>Part Ordered</legend>
+
+                <!-- Atable containing the details of the parts and the Number -->
+                <table cellpadding="4">
+                    <tr>
+                        <td style="width:30%">Part Number:</td>
+                        <td><input id="partNumber"type="text" style="width:89%;height:25px;border:1px;"></td>
+                        <td></td>
+                        <td><small class="small" id="partz"></small></td>
+                    </tr>
+                    <tr>
+                        <td>Description:</td>
+                        <td><input id="descrption" type="text" style="width:89%;height:25px;border:1px;"><small class="small" id="smdes"></small></td>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+                    </tr>
+                    <tr>
+                        <td>Price per part:</td>
+                        <td><input id="pricePerPart" type="text" style="width:25%;height:25px;border:1px;"> <small class="small" id="smprice"></small>
+                             Quantity:<input id="partquantity"type="text" style="width:34%;height:25px;border:1px;"><small class="small" id="smqty"></small></td>
+                    </tr>  
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+                    <tr>
+                            <td></td>
+                        <td><input id="containerSize" type="checkbox">Oversize Container</td>   
+                    </tr>
+                </table>
+                
+            </fieldset >
+        </div>
+
+        <!-- Asection for the results computed  -->
+        <div class="customcolor">
+            <fieldset class="fieldsettwo">
+                <legend>Output</legend>
+
+                <!-- A table containing the results -->
+                <table cellpadding="4">
+                <tr>
+                    <td style="width:65%;">Cost:</td>
+                    <td> <input id="salescost" type="text"  style=" width:100%;height:25px;border:1px;"disabled></td>
+                </tr>
+                <tr>
+                    <td >Sales Tax:</td>
+                    <td><input id="taxsales" type="text" style=" width:100%;height:25px;border:1px;"disabled></td>
+                </tr>
+                <tr>
+                    <td>Shipping & Handling:</td>
+                    <td><input type="text" id="shiphandling" style=" width:100%;height:25px;border:1px;"disabled></td>
+                </tr>
+                <tr>
+                    <td>Total:</td>
+                    <td><input id ="totalcost"type="text" style=" width:100%;height:25px;border:1px;" disabled></td>
+                </tr>
+            </table>
+            </fieldset>
+        </div>
+
+        <!-- Asection for the buttons -->
+        <div class="buttons">
+            <table>
+                <tr>
+                    <td><input id="submit" class="btn valuebuttons" type="submit" name="submit" value="Compute"></td>
+                    <td><input class="btn valuebuttons" type="button" onclick="reset();" name="newOrder" value="New Order"></td> 
+                </tr>
+            </table>    
+        </div>
+        <div>
+            <table>
+                <tr>
+                    <td style="width: 90%;"> </td>
+                    <td><input class="btn" id="lastbutton" type="button" name="exit" onclick="window.close();"value="Exit"></td>
+                </tr>
+            </table>
+        </div>
+     </div>
+    </form>
+    <script type="text/javascript" src="toyota.js"></script>
+ </body>
+ </html>
